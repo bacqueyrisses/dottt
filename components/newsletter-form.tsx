@@ -3,13 +3,22 @@ import { toast } from "sonner";
 import icon from "/public/images/icon.svg";
 import Image from "next/image";
 import { ChangeEvent, MouseEvent, useState } from "react";
+import JSConfetti from "js-confetti";
 
 export default function NewsletterForm() {
   const [isInputEmail, setIsInputEmail] = useState(false);
+  const jsConfetti = new JSConfetti();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    setIsInputEmail(emailPattern.test(event.target.value));
+    if (emailPattern.test(event.target.value)) {
+      setIsInputEmail(true);
+      void jsConfetti.addConfetti({
+        emojis: ["💌"],
+        emojiSize: 100,
+        confettiNumber: 3,
+      });
+    }
   };
 
   const handleClick = (
