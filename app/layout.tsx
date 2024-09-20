@@ -1,21 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { IBM_Plex_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import { ReactNode } from "react";
-
-const ibm = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-ibm",
-  display: "swap",
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-});
-
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
+import { ibm } from "@/app/fonts";
 
 export const metadata: Metadata = {
   title: "DOTTT ICON-PACK",

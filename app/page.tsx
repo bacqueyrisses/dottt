@@ -13,6 +13,7 @@ export default function Home() {
             alt="DOTTT logo"
             priority
           />
+
           <p>“DOTTT” ICON-PACK</p>
         </div>
         <div className={"space-y-4 w-full"}>
