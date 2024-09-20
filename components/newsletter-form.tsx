@@ -42,6 +42,8 @@ export default function NewsletterForm() {
         emojiSize: 100,
         confettiNumber: 3,
       });
+    } else {
+      setIsInputEmail(false);
     }
   };
 
