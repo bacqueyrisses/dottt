@@ -17,8 +17,8 @@ export default function Home() {
         </div>
         <div className={"space-y-4 w-full"}>
           <div className={"font-medium text-center"}>
-            <p>BE INFORMED WHEN THE ICON PACK</p>
-            <p>IS AVAILABLE</p>
+            <p>SIGN UP TO KNOW WHEN</p>
+            <p>THE ICON PACK IS AVAILABLE</p>
           </div>
 
           <NewsletterForm />

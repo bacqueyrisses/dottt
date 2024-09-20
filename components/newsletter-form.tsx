@@ -18,8 +18,8 @@ export default function NewsletterForm() {
       <div className={"flex gap-3 flex-nowrap items-center w-full"}>
         <Image className={"size-8"} src={icon} alt="DOTTT logo" priority />
         <div className={"space-x-2"}>
-          <span className={"font-bold"}>VALIDATED.</span>
-          <span>CHECK YOUR EMAILS!</span>
+          <span className={"font-bold"}>ALL SET.</span>
+          <span>CHECK YOUR EMAIL SOON.</span>
         </div>
       </div>,
     );
@@ -33,7 +33,7 @@ export default function NewsletterForm() {
           isInputEmpty ? "caret-transparent" : "caret-dottt-black"
         }`}
         onChange={handleChange}
-        placeholder={"YOUR EMAIL..."}
+        placeholder={"EMAIL ADDRESS"}
       />
       <button
         onClick={handleClick}
@@ -41,7 +41,7 @@ export default function NewsletterForm() {
           "hover:bg-[#383838] text-dottt-light-grey-secondary w-full p-4 rounded-2xl text-center bg-dottt-black text-sm"
         }
       >
-        VALIDATE
+        GET NOTIFIED
       </button>
     </form>
   );
