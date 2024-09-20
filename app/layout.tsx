@@ -18,8 +18,8 @@ const ibm = IBM_Plex_Mono({
 // });
 
 export const metadata: Metadata = {
-  title: "DOTTT",
-  description: "DOTTT description.",
+  title: "DOTTT ICON-PACK",
+  description: "High-quality UI icons for designers and developers.",
   metadataBase: new URL("https://getdottt.vercel.app"),
 };
 
