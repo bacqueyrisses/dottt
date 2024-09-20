@@ -21,7 +21,6 @@ export default function Home() {
             <p>SIGN UP TO KNOW WHEN</p>
             <p>THE ICON PACK IS AVAILABLE</p>
           </div>
-
           <NewsletterForm />
         </div>
       </main>

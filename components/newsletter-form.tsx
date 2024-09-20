@@ -2,11 +2,18 @@
 import { toast } from "sonner";
 import icon from "/public/images/icon.svg";
 import Image from "next/image";
-import { ChangeEvent, MouseEvent, useState } from "react";
+import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
 import JSConfetti from "js-confetti";
 
 export default function NewsletterForm() {
   const [isInputEmail, setIsInputEmail] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
+
   const jsConfetti = new JSConfetti();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
