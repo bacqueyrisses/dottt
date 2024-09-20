@@ -5,11 +5,13 @@ import Image from "next/image";
 import { ChangeEvent, MouseEvent, useState } from "react";
 
 export default function NewsletterForm() {
-  const [isInputEmpty, setIsInputEmpty] = useState(true);
+  const [isInputEmail, setIsInputEmail] = useState(false);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setIsInputEmpty(event.target.value === "");
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsInputEmail(emailPattern.test(event.target.value));
   };
+
   const handleClick = (
     event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
   ) => {
@@ -29,16 +31,15 @@ export default function NewsletterForm() {
     <form className="flex gap-2 items-center flex-col bg-dottt-light-grey p-2 rounded-3xl w-full">
       <input
         type="text"
-        className={`w-full p-4 rounded-2xl text-center placeholder:text-sm placeholder:text-dottt-light-grey-secondary uppercase focus:placeholder:text-dottt-black focus:outline-none ${
-          isInputEmpty ? "caret-transparent" : "caret-dottt-black"
-        }`}
+        className={`w-full p-4 rounded-2xl text-center placeholder:text-sm placeholder:text-dottt-light-grey-secondary uppercase focus:placeholder:caret-dottt-black focus:outline-none focus:placeholder:text-transparent`}
         onChange={handleChange}
         placeholder={"EMAIL ADDRESS"}
       />
       <button
         onClick={handleClick}
+        disabled={!isInputEmail}
         className={
-          "hover:bg-[#383838] text-dottt-light-grey-secondary w-full p-4 rounded-2xl text-center bg-dottt-black text-sm"
+          "hover:bg-dottt-black disabled:bg-dottt-black disabled:cursor-not-allowed w-full p-4 rounded-2xl text-center text-white disabled:text-dottt-light-grey-secondary bg-black text-sm"
         }
       >
         GET NOTIFIED
