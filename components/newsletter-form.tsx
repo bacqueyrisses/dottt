@@ -12,7 +12,24 @@ export default function NewsletterForm() {
   useEffect(() => {
     setMounted(true);
   }, []);
-  if (!mounted) return null;
+  if (!mounted)
+    return (
+      <form className="flex gap-2 items-center flex-col bg-dottt-light-grey p-2 rounded-3xl w-full">
+        <input
+          type="text"
+          className={`w-full p-4 rounded-2xl text-center placeholder:text-sm placeholder:text-dottt-light-grey-secondary uppercase focus:placeholder:caret-dottt-black focus:outline-none focus:placeholder:text-transparent`}
+          placeholder={"EMAIL ADDRESS"}
+        />
+        <button
+          disabled={true}
+          className={
+            "hover:bg-dottt-black disabled:bg-dottt-black disabled:cursor-not-allowed w-full p-4 rounded-2xl text-center text-white disabled:text-dottt-light-grey-secondary bg-black text-sm"
+          }
+        >
+          GET NOTIFIED
+        </button>
+      </form>
+    );
 
   const jsConfetti = new JSConfetti();
 
