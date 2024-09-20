@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { IBM_Plex_Mono } from "next/font/google";
 import { Toaster } from "sonner";
+import { ReactNode } from "react";
 
 const ibm = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -18,7 +19,8 @@ const ibm = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "DOTTT",
-  description: "Description.",
+  description: "DOTTT description.",
+  metadataBase: new URL("https://getdottt.vercel.app"),
 };
 
 export const viewport: Viewport = {
@@ -28,7 +30,7 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
