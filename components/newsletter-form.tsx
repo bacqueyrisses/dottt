@@ -6,7 +6,8 @@ import addNewsletter from "@/server/actions/newsletter";
 import { initialState } from "@/lib/definition";
 import { toast } from "sonner";
 import Image from "next/image";
-import icon from "/public/images/icon.svg";
+import close from "/public/images/close.svg";
+import check from "/public/images/check.svg";
 
 export default function NewsletterForm() {
   const [isInputEmail, setIsInputEmail] = useState(false);
@@ -17,7 +18,13 @@ export default function NewsletterForm() {
     if (state.success) {
       toast.success(
         <div className={"flex gap-3 flex-nowrap items-center w-full"}>
-          <Image className={"size-8"} src={icon} alt="DOTTT logo" priority />
+          <div
+            className={
+              "bg-black rounded-lg flex items-center justify-center p-1"
+            }
+          >
+            <Image className={"size-5"} src={check} alt="DOTTT logo" priority />
+          </div>
           <div className={"space-x-2"}>
             <span className={"font-bold"}>ALL SET.</span>
             <span>CHECK YOUR EMAIL SOON.</span>
@@ -29,7 +36,13 @@ export default function NewsletterForm() {
     if (!state.success) {
       toast.success(
         <div className={"flex gap-3 flex-nowrap items-center w-full"}>
-          <Image className={"size-8"} src={icon} alt="DOTTT logo" priority />
+          <div
+            className={
+              "bg-black rounded-lg flex items-center justify-center p-1"
+            }
+          >
+            <Image className={"size-5"} src={close} alt="DOTTT logo" priority />
+          </div>
           <div className={"space-x-2"}>
             <span className={"font-bold"}>ERROR.</span>
             <span>EMAIL ALREADY SENT.</span>
