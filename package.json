@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.6.0",
+    "@react-email/components": "^0.0.25",
     "js-confetti": "^0.12.0",
     "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18",
+    "resend": "^4.0.0",
     "sonner": "^1.5.0",
     "zod": "^3.23.8"
   },

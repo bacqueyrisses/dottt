@@ -3,6 +3,7 @@
 import { PrevState } from "@/lib/definition";
 import clerkClient from "@/server/clerk";
 import { z } from "zod";
+import sendMail from "@/server/actions/email";
 
 export default async function addNewsletter(
   prevState: PrevState,
@@ -20,9 +21,12 @@ export default async function addNewsletter(
 
     const email = validatedEmail.data;
 
-    await clerkClient.users.createUser({
-      emailAddress: [email],
-    });
+    clerkClient.users
+      .createUser({
+        emailAddress: [email],
+      })
+      .then(() => sendMail(email));
+
     return {
       success: true,
     };
