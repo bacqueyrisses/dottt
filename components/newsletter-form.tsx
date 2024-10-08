@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import Image from "next/image";
 import close from "/public/images/close.svg";
 import check from "/public/images/check.svg";
+import JSConfetti from "js-confetti";
 
 export default function NewsletterForm() {
   const [isInputEmail, setIsInputEmail] = useState(false);
@@ -14,7 +15,6 @@ export default function NewsletterForm() {
   const [state, formAction] = useFormState(addNewsletter, initialState);
 
   useEffect(() => {
-    console.log("🟢", state);
     if (state?.success === true) {
       toast.success(
         <div className={"flex gap-3 flex-nowrap items-center w-full"}>
@@ -78,10 +78,17 @@ export default function NewsletterForm() {
       </form>
     );
 
+  const jsConfetti = new JSConfetti();
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (emailPattern.test(event.target.value)) {
       setIsInputEmail(true);
+      void jsConfetti.addConfetti({
+        emojis: ["🖤"],
+        emojiSize: 100,
+        confettiNumber: 3,
+      });
     } else {
       setIsInputEmail(false);
     }
