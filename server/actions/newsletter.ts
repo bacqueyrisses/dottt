@@ -25,7 +25,12 @@ export default async function addNewsletter(
       .createUser({
         emailAddress: [email],
       })
-      .then(() => sendMail(email));
+      .then(() => sendMail(email))
+      .catch(() => {
+        return {
+          success: false,
+        };
+      });
 
     return {
       success: true,

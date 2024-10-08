@@ -1,6 +1,6 @@
 import Image from "next/image";
 import NewsletterForm from "@/components/newsletter-form";
-import logo from "/public/images/logo.svg";
+import logo from "/public/images/logo.png";
 
 export default function Home() {
   return (
@@ -8,8 +8,10 @@ export default function Home() {
       <main className="flex flex-col gap-6 row-start-2 items-center w-full container max-w-sm text-dottt-black">
         <div className={"gap-4 flex justify-center items-center flex-col"}>
           <Image
-            className={"size-32 translate-y-12"}
+            className={"w-[6.5rem] h-32 translate-y-12"}
             src={logo}
+            width={100}
+            height={100}
             alt="DOTTT logo"
             priority
           />

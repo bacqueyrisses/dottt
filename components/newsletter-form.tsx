@@ -15,7 +15,7 @@ export default function NewsletterForm() {
   const [state, formAction] = useFormState(addNewsletter, initialState);
 
   useEffect(() => {
-    if (state.success) {
+    if (state?.success) {
       toast.success(
         <div className={"flex gap-3 flex-nowrap items-center w-full"}>
           <div
@@ -33,7 +33,7 @@ export default function NewsletterForm() {
       );
     }
 
-    if (!state.success) {
+    if (!state?.success) {
       toast.success(
         <div className={"flex gap-3 flex-nowrap items-center w-full"}>
           <div
@@ -84,11 +84,12 @@ export default function NewsletterForm() {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (emailPattern.test(event.target.value)) {
       setIsInputEmail(true);
-      void jsConfetti.addConfetti({
-        emojis: ["💌"],
-        emojiSize: 100,
-        confettiNumber: 3,
-      });
+
+      // void jsConfetti.addConfetti({
+      //   emojis: ["♥︎"],
+      //   emojiSize: 100,
+      //   confettiNumber: 3,
+      // });
     } else {
       setIsInputEmail(false);
     }
