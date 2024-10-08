@@ -1,6 +1,5 @@
 "use client";
 import { ChangeEvent, useEffect, useState } from "react";
-import JSConfetti from "js-confetti";
 import { useFormState, useFormStatus } from "react-dom";
 import addNewsletter from "@/server/actions/newsletter";
 import { initialState } from "@/lib/definition";
@@ -78,18 +77,10 @@ export default function NewsletterForm() {
       </form>
     );
 
-  const jsConfetti = new JSConfetti();
-
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (emailPattern.test(event.target.value)) {
       setIsInputEmail(true);
-
-      // void jsConfetti.addConfetti({
-      //   emojis: ["♥︎"],
-      //   emojiSize: 100,
-      //   confettiNumber: 3,
-      // });
     } else {
       setIsInputEmail(false);
     }
