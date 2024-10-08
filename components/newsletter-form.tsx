@@ -14,7 +14,8 @@ export default function NewsletterForm() {
   const [state, formAction] = useFormState(addNewsletter, initialState);
 
   useEffect(() => {
-    if (state?.success) {
+    console.log("🟢", state);
+    if (state?.success === true) {
       toast.success(
         <div className={"flex gap-3 flex-nowrap items-center w-full"}>
           <div
@@ -32,7 +33,7 @@ export default function NewsletterForm() {
       );
     }
 
-    if (!state?.success) {
+    if (state?.success === false) {
       toast.success(
         <div className={"flex gap-3 flex-nowrap items-center w-full"}>
           <div

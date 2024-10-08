@@ -4,6 +4,7 @@ import { PrevState } from "@/lib/definition";
 import clerkClient from "@/server/clerk";
 import { z } from "zod";
 import sendMail from "@/server/actions/email";
+import { waitUntil } from "@vercel/functions";
 
 export default async function addNewsletter(
   prevState: PrevState,
@@ -21,16 +22,11 @@ export default async function addNewsletter(
 
     const email = validatedEmail.data;
 
-    clerkClient.users
-      .createUser({
-        emailAddress: [email],
-      })
-      .then(() => sendMail(email))
-      .catch(() => {
-        return {
-          success: false,
-        };
-      });
+    await clerkClient.users.createUser({
+      emailAddress: [email],
+    });
+
+    waitUntil(sendMail(email));
 
     return {
       success: true,
