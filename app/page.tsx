@@ -4,8 +4,8 @@ import logo from "/public/images/logo.png";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-ibm">
-      <main className="flex flex-col gap-6 row-start-2 items-center w-full container max-w-sm text-dottt-black">
+    <main className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-ibm">
+      <section className="flex flex-col gap-6 row-start-2 items-center w-full container max-w-sm text-dottt-black">
         <div className={"gap-4 flex justify-center items-center flex-col"}>
           <Image
             className={"w-[6.5rem] h-32 translate-y-12"}
@@ -25,7 +25,7 @@ export default function Home() {
           </div>
           <NewsletterForm />
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }

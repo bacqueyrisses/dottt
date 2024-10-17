@@ -70,7 +70,7 @@ export default function NewsletterForm() {
         <button
           disabled={true}
           className={
-            "hover:bg-dottt-black disabled:bg-dottt-black disabled:cursor-not-allowed w-full p-4 rounded-2xl text-center text-white disabled:text-dottt-light-grey-secondary bg-black text-sm"
+            "font-dotted hover:bg-dottt-black disabled:bg-dottt-black disabled:cursor-not-allowed w-full p-4 rounded-2xl text-center text-white disabled:text-dottt-light-grey-secondary bg-black"
           }
         >
           GET NOTIFIED
@@ -120,7 +120,7 @@ function SubmitForm({ isInputEmail }: { isInputEmail: boolean }) {
       tabIndex={0}
       disabled={!isInputEmail || pending}
       className={
-        "hover:bg-dottt-black disabled:bg-dottt-black disabled:cursor-not-allowed w-full p-4 rounded-2xl text-center text-white disabled:text-dottt-light-grey-secondary bg-black text-sm"
+        "font-dotted hover:bg-dottt-black disabled:bg-dottt-black disabled:cursor-not-allowed w-full p-4 rounded-2xl text-center text-white disabled:text-dottt-light-grey-secondary bg-black"
       }
     >
       GET NOTIFIED

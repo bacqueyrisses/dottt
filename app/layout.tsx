@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { ReactNode } from "react";
-import { ibm } from "@/app/fonts";
+import { ibm, dotted } from "@/app/fonts";
 import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
@@ -23,7 +23,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${ibm.variable} antialiased bg-dottt-grey`}>
+        <body
+          className={`${ibm.variable} ${dotted.variable} antialiased bg-dottt-grey`}
+        >
           <Toaster
             position={"bottom-center"}
             toastOptions={{

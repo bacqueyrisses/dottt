@@ -1,4 +1,5 @@
 import { IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 
 export const ibm = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -7,8 +8,7 @@ export const ibm = IBM_Plex_Mono({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
 
-// export const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
+export const dotted = localFont({
+  src: "./5by7.ttf",
+  variable: "--font-dotted",
+});

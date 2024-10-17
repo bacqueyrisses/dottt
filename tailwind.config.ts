@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         ibm: ["var(--font-ibm)"],
+        dotted: ["var(--font-dotted)"],
       },
       colors: {
         "dottt-grey": "#B6BBBE",
