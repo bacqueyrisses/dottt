@@ -11,4 +11,5 @@ export const ibm = IBM_Plex_Mono({
 export const dotted = localFont({
   src: "./5by7.ttf",
   variable: "--font-dotted",
+  weight: "300",
 });
