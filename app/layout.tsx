@@ -4,6 +4,7 @@ import { Toaster } from "sonner";
 import { ReactNode } from "react";
 import { ibm, dotted } from "@/app/fonts";
 import { ClerkProvider } from "@clerk/nextjs";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 export const metadata: Metadata = {
   title: "DOTTT ICON-PACK",
@@ -36,7 +37,7 @@ export default function RootLayout({
               },
             }}
           />
-          {children}
+          <NuqsAdapter>{children}</NuqsAdapter>
         </body>
       </html>
     </ClerkProvider>
