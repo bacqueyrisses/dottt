@@ -5,6 +5,20 @@ export default function CardsWrapper() {
   return (
     <section className={"flex flex-wrap gap-4 justify-center"}>
       <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
     </section>
   );
 }
