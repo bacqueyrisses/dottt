@@ -52,6 +52,7 @@ export default function AuthPage() {
               className={`w-full p-4 rounded-2xl text-center placeholder:text-sm placeholder:text-dottt-light-grey-secondary uppercase focus:placeholder:caret-dottt-black focus:outline-none focus:placeholder:text-transparent`}
               placeholder={"EMAIL ADDRESS"}
             />
+
             <button
               type={"submit"}
               className={

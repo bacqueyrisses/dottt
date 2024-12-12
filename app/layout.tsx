@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import "./globals.css";
+import "@/styles/globals.css";
 import { Toaster } from "sonner";
 import { ReactNode } from "react";
-import { ibm, dotted } from "@/app/fonts";
+import { ibm, dotted } from "@/styles/fonts";
 import { ClerkProvider } from "@clerk/nextjs";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 
